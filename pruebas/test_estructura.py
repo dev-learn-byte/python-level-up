@@ -16,7 +16,11 @@ def test_carpeta_existe(carpeta):
 
 @pytest.mark.parametrize("ruta", SISTEMA_ANTERIOR)
 def test_el_sistema_anterior_fue_retirado(ruta):
-    assert not (RAIZ / ruta).exists()
+    # Git no borra las cachés de Python (__pycache__), así que no cuentan.
+    ruta = RAIZ / ruta
+    restos = [ruta] if ruta.is_file() else ruta.rglob("*") if ruta.is_dir() else []
+    restos = [r for r in restos if r.is_file() and "__pycache__" not in r.parts]
+    assert restos == [], f"quedan archivos del sistema anterior: {restos}"
 
 
 def test_contenido_privado_ignorado_por_git():
