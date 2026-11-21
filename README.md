@@ -25,7 +25,3 @@ Aplicación web responsive para estudiar desde la computadora o el celular.
 | `web/` | Interfaz en JavaScript |
 | `pruebas/` | Pruebas automáticas (`python -m pytest`) |
 | `docs/` | Documentación |
-| `respaldo_original/` | Copia del sistema anterior, sin cambios |
-
-`sistema.py` y `rango_E_novato/` son el sistema anterior: siguen en su sitio
-hasta que las etapas 1 y 2 los reemplacen.
