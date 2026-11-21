@@ -1,21 +1,12 @@
-"""Etapa 0: la estructura base existe y el respaldo es una copia fiel."""
-import subprocess
+"""La estructura base del proyecto existe y el sistema anterior no reaparece."""
 from pathlib import Path
 
 import pytest
 
 RAIZ = Path(__file__).parent.parent
 CARPETAS = ["nucleo", "contenido/sagas", "contenido/eventos", "contenido/diarias",
-            "servidor", "web", "pruebas", "docs", "respaldo_original"]
-RESPALDADOS = {
-    "sistema.py": "sistema.py",
-    "README_original.md": "README.md",
-    "rango_E_novato/misiones.py": "rango_E_novato/misiones.py",
-    "rango_E_novato/pruebas.py": "rango_E_novato/pruebas.py",
-    "rango_E_novato/ejemplos.py": "rango_E_novato/ejemplos.py",
-    "rango_E_novato/leccion.md": "rango_E_novato/leccion.md",
-}
-COMMIT_ORIGINAL = "76a3bbb"
+            "servidor", "web", "pruebas", "docs"]
+SISTEMA_ANTERIOR = ["sistema.py", "rango_E_novato", "respaldo_original"]
 
 
 @pytest.mark.parametrize("carpeta", CARPETAS)
@@ -23,15 +14,13 @@ def test_carpeta_existe(carpeta):
     assert (RAIZ / carpeta).is_dir()
 
 
-@pytest.mark.parametrize("copia, original", RESPALDADOS.items())
-def test_respaldo_identico_al_original(copia, original):
-    en_git = subprocess.run(
-        ["git", "show", f"{COMMIT_ORIGINAL}:{original}"],
-        cwd=RAIZ, capture_output=True,
-    )
-    if en_git.returncode != 0:
-        pytest.skip("el commit original no está disponible en este clon")
-    assert (RAIZ / "respaldo_original" / copia).read_bytes() == en_git.stdout
+@pytest.mark.parametrize("ruta", SISTEMA_ANTERIOR)
+def test_el_sistema_anterior_fue_retirado(ruta):
+    # Git no borra las cachés de Python (__pycache__), así que no cuentan.
+    ruta = RAIZ / ruta
+    restos = [ruta] if ruta.is_file() else ruta.rglob("*") if ruta.is_dir() else []
+    restos = [r for r in restos if r.is_file() and "__pycache__" not in r.parts]
+    assert restos == [], f"quedan archivos del sistema anterior: {restos}"
 
 
 def test_contenido_privado_ignorado_por_git():
