@@ -1,0 +1,64 @@
+id = "n2_one_for_all"
+titulo = "One For All al 5 %"
+anime = "My Hero Academia"
+formato = "escribir"
+dispositivo = "celular"
+xp = 15
+puntos = 15
+
+enunciado = '''
+**Misión especial de la U.A.**
+
+Si Deku usa todo el One For All de golpe, se rompe los huesos. Aizawa le
+exige calcular antes cuánto poder puede usar.
+
+Calcula:
+
+1. `poder_seguro`: el porcentaje indicado del poder total. Un porcentaje se
+   calcula multiplicando por el porcentaje y dividiendo entre 100.
+2. `poder_entero`: `poder_seguro` convertido a número entero.
+3. `sin_lesion`: verdadero si el porcentaje es **menor o igual** que 20.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+poder_total = 200000
+porcentaje = 5
+
+# === TU CÓDIGO ===
+poder_seguro = ...
+poder_entero = ...
+sin_lesion = ...
+'''
+
+pistas = [
+    "poder_seguro sale de una multiplicación y una división. Como hay una división, será un número decimal.",
+    "Para convertir un decimal en entero se usa int().",
+    "sin_lesion es una comparación: no hace falta escribir True ni False a mano, la comparación ya los produce.",
+]
+
+[[casos]]
+nombre = "Al 5 %"
+pista = "poder_total * porcentaje / 100."
+[casos.variables]
+poder_seguro = 10000.0
+poder_entero = 10000
+sin_lesion = true
+
+[[casos]]
+nombre = "Al 45 %"
+datos = { poder_total = 1500, porcentaje = 45 }
+pista = "Con un 45 % Deku sí se lesiona: la comparación debe dar False."
+[casos.variables]
+poder_seguro = 675.0
+poder_entero = 675
+sin_lesion = false
+
+[[casos]]
+nombre = "Justo al 20 %"
+datos = { poder_total = 999, porcentaje = 20 }
+pista = "El 20 % justo todavía es seguro: fíjate en si usas < o <=."
+[casos.variables]
+poder_seguro = 199.8
+poder_entero = 199
+sin_lesion = true

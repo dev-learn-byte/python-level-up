@@ -1,0 +1,51 @@
+id = "n1_tarjeta_de_aqua"
+titulo = "La tarjeta de aventurera de Aqua"
+anime = "KonoSuba"
+formato = "corregir"
+dispositivo = "celular"
+xp = 15
+puntos = 15
+
+enunciado = '''
+**Misión especial del gremio de Axel.**
+
+Aqua rellenó su tarjeta de aventurera ella sola, y la recepcionista Luna no
+puede registrarla: casi todos los datos tienen el tipo equivocado.
+
+Corrige la tarjeta para que cada dato sea del tipo correcto:
+
+| Variable | Tipo correcto | Valor |
+|---|---|---|
+| `nombre` | Texto | Aqua |
+| `nivel` | Número entero | 1 |
+| `suerte` | Número entero | 1 |
+| `inteligencia` | Número decimal | 3.5 |
+| `es_diosa` | Verdadero o falso | verdadero |
+
+Kazuma comenta que la suerte, por desgracia, es correcta: de verdad es 1.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+nombre = Aqua
+nivel = "1"
+suerte = "1"
+inteligencia = "3.5"
+es_diosa = "True"
+'''
+
+pistas = [
+    "Las comillas convierten cualquier cosa en texto. A veces sobran y a veces faltan.",
+    "Un número entre comillas es un texto: \"1\" no es lo mismo que 1.",
+    "Un verdadero o falso no lleva comillas. El nombre de Aqua sí las necesita.",
+]
+
+[[casos]]
+nombre = "La tarjeta"
+pista = "Mira dónde sobran comillas y dónde faltan."
+[casos.variables]
+nombre = "Aqua"
+nivel = 1
+suerte = 1
+inteligencia = 3.5
+es_diosa = true

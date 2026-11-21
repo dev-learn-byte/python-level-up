@@ -1,0 +1,42 @@
+id = "n1_nombre_prohibido"
+titulo = "El nombre prohibido"
+anime = "Dragon Ball"
+formato = "corregir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+Krilin escribió la lista del entrenamiento con prisa y Python no la entiende.
+Hay **cuatro líneas con errores**. Arréglalas para que queden estas variables:
+
+| Variable | Valor |
+|---|---|
+| `segundo_guerrero` | el texto Vegeta |
+| `nombre_maestro` | el texto Roshi |
+| `planeta` | el texto Namek |
+| `poder_maximo` | el número 9000 |
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+2do_guerrero = "Vegeta"
+nombre maestro = "Roshi"
+planeta = Namek
+poder-maximo = 9000
+'''
+
+pistas = [
+    "Tres errores están en los nombres de las variables y uno en el valor.",
+    "Un nombre no puede empezar por un número, ni tener espacios, ni guiones normales. Se usa el guion bajo.",
+    "Namek es un texto. ¿Qué le falta a un texto para que Python no lo confunda con una variable?",
+]
+
+[[casos]]
+nombre = "La lista de Krilin"
+pista = "Usa exactamente los nombres de la tabla."
+[casos.variables]
+segundo_guerrero = "Vegeta"
+nombre_maestro = "Roshi"
+planeta = "Namek"
+poder_maximo = 9000

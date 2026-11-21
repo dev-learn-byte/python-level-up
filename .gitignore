@@ -4,6 +4,7 @@ __pycache__/
 
 # Privado: nunca se publica
 contenido_privado/
+contenido_privado
 progreso.json
 .env
 *.db

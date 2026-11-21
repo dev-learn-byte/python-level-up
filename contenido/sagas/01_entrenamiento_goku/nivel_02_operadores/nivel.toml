@@ -1,0 +1,5 @@
+numero = 2
+titulo = "Operadores e input"
+subtitulo = "El caparazón de tortuga"
+retos_evaluacion = 10
+temas = ["+ - * /", "// y %", "**", "precedencia", "comparaciones", "and, or, not", "input()", "int(), float(), str()", "+="]

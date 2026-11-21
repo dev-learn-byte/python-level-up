@@ -1,0 +1,74 @@
+id = "n2_mas_de_9000"
+titulo = "¿Más de 9000?"
+anime = "Dragon Ball"
+formato = "predecir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+El scouter de Vegeta hace cuentas y preguntas todo el rato. Lee cada trozo
+de código **sin ejecutarlo** y escribe qué valor queda guardado.
+
+Guarda tus respuestas en `respuesta_1` a `respuesta_5`. Recuerda que
+verdadero y falso se escriben `True` y `False`, sin comillas.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+respuesta_1 = ...
+respuesta_2 = ...
+respuesta_3 = ...
+respuesta_4 = ...
+respuesta_5 = ...
+'''
+
+pistas = [
+    "Las comparaciones responden True o False. Las cuentas respetan el orden: primero multiplicar, después sumar.",
+    "Con and tienen que cumplirse las dos partes. Con or basta una. not le da la vuelta.",
+    "La división con una sola barra siempre da un número decimal, aunque el resultado sea exacto.",
+]
+
+[[preguntas]]
+texto = "¿Cuánto vale `supera`?"
+codigo = '''
+poder = 9000
+supera = poder > 9000
+'''
+mirar = "supera"
+pista = "¿9000 es mayor que 9000, o es igual?"
+
+[[preguntas]]
+texto = "¿Cuánto vale `resultado`?"
+codigo = '''
+resultado = 2 + 3 * 4
+'''
+mirar = "resultado"
+pista = "¿Qué operación se hace primero?"
+
+[[preguntas]]
+texto = "¿Cuánto vale `puede_entrar`?"
+codigo = '''
+poder = 12000
+edad = 12
+puede_entrar = poder > 9000 and edad >= 18
+'''
+mirar = "puede_entrar"
+pista = "Con and tienen que cumplirse las dos condiciones."
+
+[[preguntas]]
+texto = "¿Cuánto vale `listo`?"
+codigo = '''
+cansado = False
+listo = not cansado or 1 > 5
+'''
+mirar = "listo"
+pista = "Calcula primero not cansado. Con or basta que una parte sea verdad."
+
+[[preguntas]]
+texto = "¿Cuánto vale `mitad`?"
+codigo = '''
+mitad = 8 / 2
+'''
+mirar = "mitad"
+pista = "Fíjate en el tipo del resultado: ¿entero o decimal?"

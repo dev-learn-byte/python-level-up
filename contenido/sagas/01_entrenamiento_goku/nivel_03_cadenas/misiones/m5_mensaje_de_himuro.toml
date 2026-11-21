@@ -1,0 +1,49 @@
+id = "n3_mensaje_de_himuro"
+titulo = "El mensaje frío de Himuro"
+anime = "Rompiendo el hielo"
+formato = "escribir"
+dispositivo = "pc"
+xp = 15
+puntos = 15
+
+enunciado = '''
+**Misión especial de la oficina.**
+
+Himuro le escribió un mensaje a Fuyutsuki, pero se puso tan nervioso que lo
+congeló: el mensaje salió **al revés** y con un copo de nieve `*` en el
+lugar de cada espacio.
+
+Ayuda a Fuyutsuki a leerlo. Guarda en `descifrado` el mensaje arreglado:
+
+1. Dale la vuelta al texto.
+2. Cambia cada `*` por un espacio.
+
+Con `"ranec*a*somaV"` debe quedar `"Vamos a cenar"`.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+mensaje = "ranec*a*somaV"
+
+# === TU CÓDIGO ===
+descifrado = ...
+'''
+
+pistas = [
+    "Necesitas una rebanada especial para invertir y un método para cambiar un símbolo por otro.",
+    "Una rebanada con paso -1 recorre el texto al revés.",
+    "mensaje[::-1] invierte el texto. Después encadena .replace() para cambiar los copos.",
+]
+
+[[casos]]
+nombre = "La invitación"
+pista = "Primero dale la vuelta y después cambia los copos."
+[casos.variables]
+descifrado = "Vamos a cenar"
+
+[[casos]]
+nombre = "El segundo intento"
+datos = { mensaje = "éfac*nu*somamoT" }
+pista = "El código debe servir para cualquier mensaje congelado."
+[casos.variables]
+descifrado = "Tomamos un café"

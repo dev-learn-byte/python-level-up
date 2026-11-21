@@ -1,0 +1,56 @@
+id = "n2_reparto_de_semillas"
+titulo = "Reparto de semillas"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+Karin tiene una bolsa de semillas del ermitaño y quiere repartirlas en
+partes iguales entre los guerreros, sin partir ninguna.
+
+Calcula:
+
+1. `para_cada_uno`: cuántas semillas enteras recibe cada guerrero.
+2. `sobran`: cuántas semillas quedan en la bolsa después del reparto.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+semillas = 7
+guerreros = 2
+
+# === TU CÓDIGO ===
+para_cada_uno = ...
+sobran = ...
+'''
+
+pistas = [
+    "Hay un operador para repartir en partes iguales y otro para saber lo que sobra.",
+    "La división normal (/) da decimales, y aquí no se pueden partir semillas.",
+    "Repartir es // y lo que sobra es %.",
+]
+
+[[casos]]
+nombre = "7 semillas para 2"
+pista = "Cada uno recibe 3 y sobra 1."
+[casos.variables]
+para_cada_uno = 3
+sobran = 1
+
+[[casos]]
+nombre = "20 semillas para 6"
+datos = { semillas = 20, guerreros = 6 }
+pista = "El resultado debe ser un número entero, no un decimal."
+[casos.variables]
+para_cada_uno = 3
+sobran = 2
+
+[[casos]]
+nombre = "Reparto exacto"
+datos = { semillas = 12, guerreros = 4 }
+pista = "Cuando el reparto es exacto, no sobra nada."
+[casos.variables]
+para_cada_uno = 3
+sobran = 0

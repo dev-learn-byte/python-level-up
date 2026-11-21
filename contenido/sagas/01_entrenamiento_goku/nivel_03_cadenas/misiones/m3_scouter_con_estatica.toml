@@ -1,0 +1,54 @@
+id = "n3_scouter_con_estatica"
+titulo = "El scouter con estática"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "pc"
+xp = 10
+puntos = 10
+
+enunciado = '''
+El scouter de Raditz está averiado. Sus lecturas llegan con espacios de
+más, en mayúsculas y con signos `?` de estática.
+
+Guarda en `limpia` la lectura arreglada:
+
+1. Sin espacios al principio ni al final.
+2. Sin ningún signo `?`.
+3. Toda en minúsculas.
+
+Con `"  PODER: 9001???  "` debe quedar `"poder: 9001"`.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+lectura = "  PODER: 9001???  "
+
+# === TU CÓDIGO ===
+limpia = ...
+'''
+
+pistas = [
+    "Son tres arreglos, y hay un método para cada uno.",
+    "Los métodos se pueden encadenar con puntos, uno detrás de otro.",
+    "Para borrar un trozo, cámbialo por un texto vacío: .replace(\"?\", \"\").",
+]
+
+[[casos]]
+nombre = "Lectura de poder"
+pista = "Quita los espacios, borra los signos y pasa a minúsculas."
+[casos.variables]
+limpia = "poder: 9001"
+
+[[casos]]
+nombre = "Lectura de alerta"
+datos = { lectura = " ALERTA: Saiyajin?  " }
+pista = "El código debe servir para cualquier lectura."
+[casos.variables]
+limpia = "alerta: saiyajin"
+
+[[casos]]
+nombre = "Lectura sin estática"
+datos = { lectura = "Todo En Orden" }
+pista = "Si no hay nada que quitar, solo cambian las mayúsculas."
+[casos.variables]
+limpia = "todo en orden"

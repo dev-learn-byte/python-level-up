@@ -1,0 +1,48 @@
+id = "n2_kaioken"
+titulo = "Kaioken x10"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+El Kaioken multiplica el poder de Goku. Calcula dos cosas:
+
+1. `poder_kaioken`: el poder base **multiplicado** por el multiplicador.
+2. `poder_al_cuadrado`: el poder base **elevado a 2**.
+
+Usa las variables de los datos, porque el multiplicador cambia en cada
+combate.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+poder_base = 3000
+multiplicador = 4
+
+# === TU CÓDIGO ===
+poder_kaioken = ...
+poder_al_cuadrado = ...
+'''
+
+pistas = [
+    "Multiplicar se escribe con un asterisco y elevar con dos asteriscos seguidos.",
+    "Escribe la cuenta con los nombres de las variables, no con los números.",
+    "poder_kaioken usa * entre las dos variables. poder_al_cuadrado usa ** y el número 2.",
+]
+
+[[casos]]
+nombre = "Kaioken x4"
+pista = "Multiplica poder_base por multiplicador."
+[casos.variables]
+poder_kaioken = 12000
+poder_al_cuadrado = 9000000
+
+[[casos]]
+nombre = "Kaioken x10"
+datos = { poder_base = 500, multiplicador = 10 }
+pista = "Si escribiste los números a mano, el resultado no cambia con otros datos."
+[casos.variables]
+poder_kaioken = 5000
+poder_al_cuadrado = 250000

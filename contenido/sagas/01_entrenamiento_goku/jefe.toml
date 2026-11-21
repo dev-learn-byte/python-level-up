@@ -1,0 +1,134 @@
+id = "roshi"
+nombre = "Maestro Roshi"
+titulo = "La inscripción al Torneo de Artes Marciales"
+transformacion = "Discípulo Tortuga"
+dispositivo = "pc"
+xp = 150
+puntos = 100
+
+enunciado = '''
+**Jefe final de la saga.**
+
+El Maestro Roshi solo te dejará entrar al Torneo de Artes Marciales si
+escribes tú solo el programa de inscripción. Es tu primer programa completo:
+usa todo lo que aprendiste en los tres niveles.
+
+El programa pregunta tres datos con `input()`, **en este orden**:
+
+1. El nombre del participante.
+2. Su edad, en años (un número entero).
+3. Su poder (un número, que puede tener decimales).
+
+Y muestra una ficha de **siete líneas**. Si se escribe `goku`, `12` y
+`260`, la ficha debe ser exactamente:
+
+```
+=== TORNEO DE ARTES MARCIALES ===
+Participante: Goku
+Edad: 12 años
+Poder: 260.0
+Poder por año: 21.7
+Supera los 9000: False
+Código: GOK-12
+```
+
+Detalles de cada línea:
+
+- **Participante**: el nombre sin espacios a los lados y con solo la
+  primera letra en mayúscula, aunque se escriba `"  gOKU "`.
+- **Poder**: con un decimal.
+- **Poder por año**: el poder dividido entre la edad, con un decimal.
+- **Supera los 9000**: `True` o `False`.
+- **Código**: las tres primeras letras del nombre en mayúsculas, un guion y
+  la edad.
+
+Los datos serán siempre válidos: la edad será un entero mayor que cero y el
+poder será un número. Más adelante aprenderás a comprobar datos incorrectos
+y mejorarás este mismo programa.
+
+El texto que pongas dentro de cada `input()` puede ser el que quieras.
+
+**Reglas del combate:** tienes 5 vidas. Cada entrega con algún requisito sin
+cumplir cuesta una vida. Practicar es gratis.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+# Escribe aquí tu programa de inscripción.
+'''
+
+pistas = [
+    "Empieza por guardar los tres datos, ya limpios y convertidos, en tres variables. Después escribe un print() por cada línea de la ficha.",
+    "El nombre necesita dos métodos encadenados. La edad se convierte con int() y el poder con float().",
+    "Usa f-strings para cada línea. El decimal se consigue con :.1f, y el código con una rebanada del nombre, .upper() y la edad.",
+]
+
+# Comprobaciones de práctica: dos participantes con la ficha a la vista.
+[[practica]]
+nombre = "Vegeta, con el nombre desordenado y justo 9000 de poder"
+entradas = ["  vEGETA ", "30", "9000"]
+pista = "El nombre llega con espacios y mayúsculas desordenadas. Y 9000 no supera a 9000."
+salida = [
+    "=== TORNEO DE ARTES MARCIALES ===",
+    "Participante: Vegeta",
+    "Edad: 30 años",
+    "Poder: 9000.0",
+    "Poder por año: 300.0",
+    "Supera los 9000: False",
+    "Código: VEG-30",
+]
+
+[[practica]]
+nombre = "Goku"
+entradas = ["goku", "12", "260"]
+pista = "Compara tu ficha con la del enunciado, línea por línea."
+salida = [
+    "=== TORNEO DE ARTES MARCIALES ===",
+    "Participante: Goku",
+    "Edad: 12 años",
+    "Poder: 260.0",
+    "Poder por año: 21.7",
+    "Supera los 9000: False",
+    "Código: GOK-12",
+]
+
+# Requisitos del combate oficial. Se comprueban con varios participantes.
+[[requisitos]]
+texto = "Pregunta exactamente tres datos con input()"
+entradas = 3
+pista = "Cuenta cuántas veces llamas a input(): deben ser tres."
+
+[[requisitos]]
+texto = "La primera línea es el título del torneo"
+linea = 1
+pista = "Copia el título tal cual, con los tres signos = a cada lado."
+
+[[requisitos]]
+texto = "El nombre sale limpio y con la primera letra en mayúscula"
+linea = 2
+pista = "El nombre puede llegar con espacios y con mayúsculas desordenadas."
+
+[[requisitos]]
+texto = "La edad se muestra como número entero seguido de 'años'"
+linea = 3
+pista = "Convierte la edad a entero antes de mostrarla."
+
+[[requisitos]]
+texto = "El poder se muestra con un decimal"
+linea = 4
+pista = "El poder puede tener decimales: conviértelo con float() y usa :.1f."
+
+[[requisitos]]
+texto = "El poder por año se calcula y se muestra con un decimal"
+linea = 5
+pista = "Es una división entre dos números, mostrada con :.1f."
+
+[[requisitos]]
+texto = "Indica con True o False si el poder supera los 9000"
+linea = 6
+pista = "Una comparación ya produce True o False."
+
+[[requisitos]]
+texto = "El código de inscripción tiene tres letras en mayúsculas, un guion y la edad"
+linea = 7
+pista = "Usa una rebanada del nombre ya limpio y pásala a mayúsculas."

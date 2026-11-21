@@ -1,0 +1,55 @@
+id = "n3_grito_del_ataque"
+titulo = "El grito del ataque"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+Un ataque no sirve de nada si no se grita bien. A partir del nombre del
+ataque, guarda:
+
+1. `grito`: el ataque en mayúsculas, seguido de un signo de exclamación `!`.
+2. `inicio`: las cuatro primeras letras del ataque.
+3. `ultima`: la última letra del ataque.
+4. `letras`: cuántas letras tiene el ataque.
+
+Con `kamehameha`, el grito es `KAMEHAMEHA!`.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+ataque = "kamehameha"
+
+# === TU CÓDIGO ===
+grito = ...
+inicio = ...
+ultima = ...
+letras = ...
+'''
+
+pistas = [
+    "Necesitas un método para las mayúsculas, una rebanada, una posición contada desde el final y una función que cuenta.",
+    "Dos textos se pueden unir con el signo +. La última letra siempre está en la posición -1.",
+    "grito usa .upper() y + \"!\". inicio usa [:4]. letras usa len().",
+]
+
+[[casos]]
+nombre = "kamehameha"
+pista = "Trabaja con la variable ataque, no con el texto escrito a mano."
+[casos.variables]
+grito = "KAMEHAMEHA!"
+inicio = "kame"
+ultima = "a"
+letras = 10
+
+[[casos]]
+nombre = "masenko"
+datos = { ataque = "masenko" }
+pista = "El código debe funcionar con cualquier ataque."
+[casos.variables]
+grito = "MASENKO!"
+inicio = "mase"
+ultima = "o"
+letras = 7

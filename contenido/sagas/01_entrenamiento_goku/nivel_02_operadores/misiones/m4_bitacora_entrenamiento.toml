@@ -1,0 +1,53 @@
+id = "n2_bitacora_entrenamiento"
+titulo = "Bitácora del entrenamiento"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "pc"
+xp = 10
+puntos = 10
+requiere = ["input("]
+
+enunciado = '''
+Goku y Krilin reparten leche corriendo alrededor de la isla. El Maestro
+Roshi quiere un programa que lleve la cuenta.
+
+Tu programa debe:
+
+1. Preguntar con `input()` cuántas vueltas se dieron por la **mañana**.
+2. Preguntar con `input()` cuántas vueltas se dieron por la **tarde**.
+3. Mostrar el total de vueltas.
+4. Mostrar los kilómetros recorridos. Cada vuelta mide **2.5** kilómetros.
+
+Si se escriben 10 y 15, debe mostrar exactamente:
+
+```
+Total de vueltas: 25
+Kilómetros: 62.5
+```
+
+El texto que pongas dentro de `input()` para preguntar puede ser el que
+quieras. Siempre se escribirán números enteros.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+# Escribe aquí tu programa.
+'''
+
+pistas = [
+    "Lo que llega de input() es un texto. Para sumar las vueltas tienes que convertirlo primero.",
+    "Guarda cada respuesta ya convertida, por ejemplo: manana = int(input(\"Vueltas de la mañana: \")).",
+    "Suma las dos variables en una tercera, y muéstrala con print(\"Total de vueltas:\", total). Los kilómetros son el total por 2.5.",
+]
+
+[[casos]]
+nombre = "10 por la mañana y 15 por la tarde"
+entradas = ["10", "15"]
+pista = "Convierte las respuestas con int() antes de sumar."
+salida = ["Total de vueltas: 25", "Kilómetros: 62.5"]
+
+[[casos]]
+nombre = "4 por la mañana y 0 por la tarde"
+entradas = ["4", "0"]
+pista = "El total debe calcularse con lo que se escribe, no con números fijos."
+salida = ["Total de vueltas: 4", "Kilómetros: 10.0"]

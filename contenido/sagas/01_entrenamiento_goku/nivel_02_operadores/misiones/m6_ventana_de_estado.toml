@@ -1,0 +1,61 @@
+id = "n2_ventana_de_estado"
+titulo = "La ventana de estado"
+anime = "Solo Leveling"
+formato = "corregir"
+dispositivo = "pc"
+xp = 15
+puntos = 15
+requiere = ["input("]
+
+enunciado = '''
+**Misión especial del Sistema.**
+
+A Sung Jinwoo le aparece una ventana que calcula cuánta experiencia le falta
+para subir de nivel. Pero el programa de la ventana tiene **dos errores** y
+el Sistema se queda colgado.
+
+El programa pregunta la experiencia actual. Hacen falta 1000 puntos para
+subir. Si se escribe 750, debe mostrar exactamente:
+
+```
+Faltan 250 puntos
+Sube de nivel: False
+```
+
+Y si se escribe 1000:
+
+```
+Faltan 0 puntos
+Sube de nivel: True
+```
+
+Encuentra y arregla los dos errores.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+experiencia = input("Experiencia actual: ")
+necesaria = 1000
+faltan = necesaria - experiencia
+sube = faltan = 0
+print("Faltan", faltan, "puntos")
+print("Sube de nivel:", sube)
+'''
+
+pistas = [
+    "Un error hace que el programa se detenga. El otro no lo detiene, pero da un resultado equivocado.",
+    "¿De qué tipo es lo que llega de input()? ¿Se puede restar así?",
+    "Mira la línea de sube: un solo = guarda un valor, y dos == hacen una pregunta.",
+]
+
+[[casos]]
+nombre = "Con 750 de experiencia"
+entradas = ["750"]
+pista = "Convierte la experiencia a número y revisa cómo se calcula sube."
+salida = ["Faltan 250 puntos", "Sube de nivel: False"]
+
+[[casos]]
+nombre = "Con 1000 de experiencia"
+entradas = ["1000"]
+pista = "Cuando no falta nada, sube debe ser True."
+salida = ["Faltan 0 puntos", "Sube de nivel: True"]

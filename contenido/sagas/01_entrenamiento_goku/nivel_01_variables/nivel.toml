@@ -1,0 +1,5 @@
+numero = 1
+titulo = "Variables y tipos"
+subtitulo = "El primer día en Kame House"
+retos_evaluacion = 10
+temas = ["variables", "int", "float", "str", "bool", "print()", "type()", "nombres válidos", "comentarios"]

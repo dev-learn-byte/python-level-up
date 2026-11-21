@@ -1,0 +1,50 @@
+# Repaso del Nivel 1. Se eligen tres preguntas; si aciertas las tres,
+# recuperas una vida (una vez por intento de nivel).
+preguntas_por_repaso = 3
+
+[[preguntas]]
+texto = "¿Cuánto vale `nivel` al final?"
+codigo = '''
+nivel = 1
+nivel = nivel + 1
+nivel = nivel + 1
+'''
+mirar = "nivel"
+
+[[preguntas]]
+texto = "¿De qué tipo es `x`? Responde con el nombre del tipo entre comillas."
+codigo = '''
+x = "9001"
+'''
+mirar = "tipo:x"
+
+[[preguntas]]
+texto = "¿De qué tipo es `x`? Responde con el nombre del tipo entre comillas."
+codigo = '''
+x = 3.0
+'''
+mirar = "tipo:x"
+
+[[preguntas]]
+texto = "¿Cuánto vale `segunda` al final?"
+codigo = '''
+primera = 8
+segunda = primera
+primera = 0
+'''
+mirar = "segunda"
+
+[[preguntas]]
+texto = "¿Qué se muestra en pantalla? Escríbelo como texto."
+codigo = '''
+maestro = "Roshi"
+print("Maestro", maestro)
+'''
+mirar = "salida"
+
+[[preguntas]]
+texto = "¿De qué tipo es `x`? Responde con el nombre del tipo entre comillas."
+codigo = '''
+x = True
+'''
+mirar = "tipo:x"

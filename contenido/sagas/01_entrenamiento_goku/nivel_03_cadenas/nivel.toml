@@ -1,0 +1,5 @@
+numero = 3
+titulo = "Cadenas de texto"
+subtitulo = "Los mensajes del Gran Patriarca"
+retos_evaluacion = 10
+temas = ["índices", "rebanadas", "len()", "in", "upper, lower, capitalize, title", "strip, replace", "count, startswith, endswith", "split", "f-strings", "inmutabilidad"]

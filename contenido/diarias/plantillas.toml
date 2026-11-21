@@ -1,0 +1,161 @@
+# Plantillas de la misión diaria.
+#
+# Cada día se elige una plantilla de un nivel ya aprobado y se rellenan sus
+# huecos <<a>>, <<b>>... con valores de las listas. La respuesta correcta no
+# está escrita: se calcula ejecutando el código.
+
+# --- Familia 1: seguir variables (Nivel 1) ---
+
+[[plantillas]]
+familia = "seguir_variables"
+nivel = 1
+texto = "¿Cuánto vale `esferas` al final?"
+codigo = '''
+esferas = <<a>>
+esferas = esferas + <<b>>
+esferas = esferas - <<c>>
+'''
+mirar = "esferas"
+[plantillas.valores]
+a = [3, 4, 5, 6, 7]
+b = [1, 2, 3, 4]
+c = [1, 2, 3]
+
+[[plantillas]]
+familia = "seguir_variables"
+nivel = 1
+texto = "¿Cuánto vale `copia` al final?"
+codigo = '''
+poder = <<a>>
+copia = poder
+poder = <<b>>
+copia = copia + <<c>>
+'''
+mirar = "copia"
+[plantillas.valores]
+a = [100, 250, 400, 900]
+b = [0, 1, 5000]
+c = [1, 10, 50]
+
+[[plantillas]]
+familia = "seguir_variables"
+nivel = 1
+texto = "¿De qué tipo es `x`? Responde con el nombre del tipo entre comillas."
+codigo = '''
+x = <<a>>
+'''
+mirar = "tipo:x"
+[plantillas.valores]
+a = ["9001", "9001.0", "\"9001\"", "True", "\"True\"", "0", "0.0", "\"Goku\"", "False", "3.5"]
+
+# --- Familia 2: cuentas y conversiones (Nivel 2) ---
+
+[[plantillas]]
+familia = "cuentas_y_conversiones"
+nivel = 2
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+r = <<a>> + <<b>> * <<c>>
+'''
+mirar = "r"
+[plantillas.valores]
+a = [1, 2, 5, 10]
+b = [2, 3, 4]
+c = [2, 3, 5, 6]
+
+[[plantillas]]
+familia = "cuentas_y_conversiones"
+nivel = 2
+texto = "Hay que repartir semillas entre guerreros. ¿Cuánto vale `sobran`?"
+codigo = '''
+semillas = <<a>>
+guerreros = <<b>>
+para_cada_uno = semillas // guerreros
+sobran = semillas % guerreros
+'''
+mirar = "sobran"
+[plantillas.valores]
+a = [13, 17, 20, 23, 29, 31]
+b = [2, 3, 4, 5, 6]
+
+[[plantillas]]
+familia = "cuentas_y_conversiones"
+nivel = 2
+texto = "¿Cuánto vale `total`?"
+codigo = '''
+texto = "<<a>>"
+total = int(texto) + <<b>>
+'''
+mirar = "total"
+[plantillas.valores]
+a = [7, 12, 25, 40, 99]
+b = [1, 5, 10]
+
+[[plantillas]]
+familia = "cuentas_y_conversiones"
+nivel = 2
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+poder = <<a>>
+r = poder > <<b>> and poder <= <<c>>
+'''
+mirar = "r"
+[plantillas.valores]
+a = [500, 1000, 5000, 9000, 9001]
+b = [100, 1000, 9000]
+c = [1000, 9000, 20000]
+
+# --- Familia 3: transformar textos (Nivel 3) ---
+
+[[plantillas]]
+familia = "transformar_textos"
+nivel = 3
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+palabra = "<<a>>"
+r = palabra[<<b>>:<<c>>]
+'''
+mirar = "r"
+[plantillas.valores]
+a = ["kamehameha", "shenlong", "saiyajin", "capsula", "torneo"]
+b = [0, 1, 2]
+c = [3, 4, 5]
+
+[[plantillas]]
+familia = "transformar_textos"
+nivel = 3
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+r = "<<a>>".strip().<<b>>()
+'''
+mirar = "r"
+[plantillas.valores]
+a = ["  goku ", " VEGETA", "kRILIN  ", " son gohan "]
+b = ["upper", "lower", "capitalize", "title"]
+
+[[plantillas]]
+familia = "transformar_textos"
+nivel = 3
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+frase = "<<a>>"
+r = frase.count("<<b>>")
+'''
+mirar = "r"
+[plantillas.valores]
+a = ["la esfera de las estrellas", "el maestro entrena en la isla", "una nave llega a namek"]
+b = ["a", "e", "la", "s"]
+
+[[plantillas]]
+familia = "transformar_textos"
+nivel = 3
+texto = "¿Qué texto queda en `r`?"
+codigo = '''
+nombre = "<<a>>"
+poder = <<b>>
+r = f"{nombre[0]}-{poder:,}"
+'''
+mirar = "r"
+[plantillas.valores]
+a = ["Goku", "Bulma", "Piccolo", "Roshi"]
+b = [1500, 9001, 120000, 800]

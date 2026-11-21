@@ -1,0 +1,51 @@
+id = "n3_ficha_del_guerrero"
+titulo = "Ficha del guerrero"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+requiere = ["f\""]
+
+enunciado = '''
+El torneo necesita una ficha de cada guerrero en una sola línea. Con una
+**f-string**, guarda en `ficha` un texto con este formato exacto:
+
+```
+Goku | Poder: 9,001 | Altura: 1.76 m
+```
+
+- El poder lleva separador de miles.
+- La altura se muestra con dos decimales.
+
+Usa comillas dobles para la f-string.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+nombre = "Goku"
+poder = 9001
+altura = 1.756
+
+# === TU CÓDIGO ===
+ficha = ...
+'''
+
+pistas = [
+    "Una f-string empieza con f\" y las variables van entre llaves.",
+    "El formato se escribe dentro de las llaves, después de dos puntos.",
+    "El separador de miles es {poder:,} y los dos decimales son {altura:.2f}.",
+]
+
+[[casos]]
+nombre = "Goku"
+pista = "Revisa los espacios, las barras y la letra m del final."
+[casos.variables]
+ficha = "Goku | Poder: 9,001 | Altura: 1.76 m"
+
+[[casos]]
+nombre = "Krilin"
+datos = { nombre = "Krilin", poder = 1770, altura = 1.53 }
+pista = "La ficha debe armarse con las variables."
+[casos.variables]
+ficha = "Krilin | Poder: 1,770 | Altura: 1.53 m"

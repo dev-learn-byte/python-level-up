@@ -1,0 +1,44 @@
+id = "n1_ficha_goku"
+titulo = "La ficha de Goku"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+El Maestro Roshi quiere apuntar a su nuevo alumno. Guarda los datos de Goku
+en cuatro variables:
+
+| Variable | Qué guarda | Valor |
+|---|---|---|
+| `nombre` | Un texto | Goku |
+| `poder` | Un número entero | 9001 |
+| `altura` | Un número con decimales | 1.75 |
+| `es_saiyajin` | Verdadero o falso | verdadero |
+
+Cambia cada `...` por el valor correcto.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+nombre = ...
+poder = ...
+altura = ...
+es_saiyajin = ...
+'''
+
+pistas = [
+    "Cada dato es de una clase distinta: texto, entero, decimal y verdadero o falso.",
+    "Los textos van entre comillas. Los decimales usan punto, no coma.",
+    "Verdadero se escribe en inglés y con la primera letra en mayúscula.",
+]
+
+[[casos]]
+nombre = "La ficha"
+pista = "Revisa de qué clase debe ser cada dato."
+[casos.variables]
+nombre = "Goku"
+poder = 9001
+altura = 1.75
+es_saiyajin = true

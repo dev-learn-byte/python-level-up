@@ -1,0 +1,74 @@
+id = "n3_cuantas_esferas"
+titulo = "¿Cuántas esferas?"
+anime = "Dragon Ball"
+formato = "predecir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+Bulma revisa los mensajes del radar. Lee cada trozo de código **sin
+ejecutarlo** y escribe qué valor queda en `r`.
+
+Guarda tus respuestas en `respuesta_1` a `respuesta_5`. Los textos van
+entre comillas.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+respuesta_1 = ...
+respuesta_2 = ...
+respuesta_3 = ...
+respuesta_4 = ...
+respuesta_5 = ...
+'''
+
+pistas = [
+    "Recuerda que las posiciones empiezan en 0 y que una rebanada se detiene justo antes del segundo número.",
+    "in responde True o False. len() cuenta todas las letras.",
+    "En la última pregunta, fíjate en si alguien guarda el resultado del método.",
+]
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+mensaje = "esfera esfera radar esfera"
+r = mensaje.count("esfera")
+'''
+mirar = "r"
+pista = "Cuenta cuántas veces aparece la palabra."
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+r = "radar" in "el radar del dragón"
+'''
+mirar = "r"
+pista = "Es una pregunta de sí o no."
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+r = len("Shenlong")
+'''
+mirar = "r"
+pista = "Cuenta las letras una por una."
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+palabra = "dragon"
+r = palabra[1:4]
+'''
+mirar = "r"
+pista = "Empieza en la posición 1 y se detiene antes de la 4."
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+nombre = "goku"
+nombre.upper()
+r = nombre
+'''
+mirar = "r"
+pista = "Los métodos devuelven un texto nuevo. ¿Dónde se guardó?"

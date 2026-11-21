@@ -1,0 +1,59 @@
+id = "n1_almacen_capsulas"
+titulo = "El almacén de la Corporación Cápsula"
+anime = "Dragon Ball"
+formato = "escribir"
+dispositivo = "pc"
+xp = 10
+puntos = 10
+requiere = ["type("]
+
+enunciado = '''
+En el almacén de la Corporación Cápsula hay cuatro cápsulas sin clasificar.
+Nadie sabe qué clase de dato guarda cada una, y cada día llegan cápsulas
+distintas.
+
+Usa `type()` para averiguar el tipo de cada cápsula y guárdalo en `tipo_1`,
+`tipo_2`, `tipo_3` y `tipo_4`.
+
+No escribas el tipo a mano: mañana las cápsulas serán otras y tu código
+tiene que seguir funcionando.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+capsula_1 = 9
+capsula_2 = "moto"
+capsula_3 = 2.5
+capsula_4 = False
+
+# === TU CÓDIGO ===
+tipo_1 = ...
+tipo_2 = ...
+tipo_3 = ...
+tipo_4 = ...
+'''
+
+pistas = [
+    "type() recibe un valor entre paréntesis y responde con su tipo.",
+    "Puedes guardar la respuesta de type() en una variable, igual que guardas un número.",
+    "La primera línea es: tipo_1 = type(capsula_1). Las demás siguen la misma idea.",
+]
+
+[[casos]]
+nombre = "El almacén de hoy"
+pista = "Pregunta el tipo de cada cápsula con type()."
+[casos.clases]
+tipo_1 = "int"
+tipo_2 = "str"
+tipo_3 = "float"
+tipo_4 = "bool"
+
+[[casos]]
+nombre = "El almacén de mañana"
+datos = { capsula_1 = "radar", capsula_2 = 7, capsula_3 = true, capsula_4 = 0.5 }
+pista = "Si escribiste los tipos a mano, fallan cuando cambian las cápsulas."
+[casos.clases]
+tipo_1 = "str"
+tipo_2 = "int"
+tipo_3 = "bool"
+tipo_4 = "float"

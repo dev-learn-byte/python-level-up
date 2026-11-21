@@ -1,0 +1,56 @@
+# Repaso de los niveles 1 y 2. Se eligen tres preguntas; si aciertas las
+# tres, recuperas una vida (una vez por intento de nivel).
+preguntas_por_repaso = 3
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+r = 3 + 2 * 5
+'''
+mirar = "r"
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+r = 19 % 6
+'''
+mirar = "r"
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+r = 19 // 6
+'''
+mirar = "r"
+
+[[preguntas]]
+texto = "¿De qué tipo es `x`? Responde con el nombre del tipo entre comillas."
+codigo = '''
+x = 10 / 2
+'''
+mirar = "tipo:x"
+
+[[preguntas]]
+texto = "¿Cuánto vale `r`?"
+codigo = '''
+poder = 500
+r = poder > 100 and poder < 400
+'''
+mirar = "r"
+
+[[preguntas]]
+texto = "¿Cuánto vale `total`?"
+codigo = '''
+texto = "12"
+total = int(texto) + 3
+'''
+mirar = "total"
+
+[[preguntas]]
+texto = "¿Cuánto vale `copia` al final?"
+codigo = '''
+vidas = 5
+copia = vidas
+vidas = vidas - 2
+'''
+mirar = "copia"

@@ -1,0 +1,68 @@
+id = "n3_canto_de_megumin"
+titulo = "El canto de Megumin"
+anime = "KonoSuba"
+formato = "escribir"
+dispositivo = "celular"
+xp = 15
+puntos = 15
+
+enunciado = '''
+**Misión especial del gremio de Axel.**
+
+Megumin solo puede lanzar su Explosión una vez al día, así que Kazuma quiere
+comprobar el canto antes de que lo desperdicie.
+
+Un canto es correcto si **empieza** con `Oscuridad` y **termina** con
+`¡Explosión!`. Guarda:
+
+1. `empieza_bien`: verdadero si el canto empieza con `Oscuridad`.
+2. `termina_bien`: verdadero si el canto termina con `¡Explosión!`.
+3. `canto_valido`: verdadero solo si se cumplen las dos cosas.
+4. `palabras`: cuántas palabras tiene el canto.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+canto = "Oscuridad más negra que el negro, yo invoco: ¡Explosión!"
+
+# === TU CÓDIGO ===
+empieza_bien = ...
+termina_bien = ...
+canto_valido = ...
+palabras = ...
+'''
+
+pistas = [
+    "Hay un método que pregunta cómo empieza un texto y otro que pregunta cómo termina. Los dos responden True o False.",
+    "Para exigir que se cumplan dos cosas a la vez se usa and.",
+    ".split() separa el texto en palabras, y len() cuenta cuántas salieron.",
+]
+
+[[casos]]
+nombre = "El canto completo"
+pista = "Usa .startswith() y .endswith() sobre la variable canto."
+[casos.variables]
+empieza_bien = true
+termina_bien = true
+canto_valido = true
+palabras = 9
+
+[[casos]]
+nombre = "El canto al revés"
+datos = { canto = "¡Explosión! Oscuridad" }
+pista = "Este canto tiene las palabras correctas, pero en el orden equivocado."
+[casos.variables]
+empieza_bien = false
+termina_bien = false
+canto_valido = false
+palabras = 2
+
+[[casos]]
+nombre = "El canto a medias"
+datos = { canto = "Oscuridad total y nada más" }
+pista = "Empieza bien, pero no termina bien: el canto no es válido."
+[casos.variables]
+empieza_bien = true
+termina_bien = false
+canto_valido = false
+palabras = 5

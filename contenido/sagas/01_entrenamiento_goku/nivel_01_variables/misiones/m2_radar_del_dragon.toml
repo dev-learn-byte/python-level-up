@@ -1,0 +1,67 @@
+id = "n1_radar_del_dragon"
+titulo = "¿Qué marca el radar?"
+anime = "Dragon Ball"
+formato = "predecir"
+dispositivo = "celular"
+xp = 10
+puntos = 10
+
+enunciado = '''
+Bulma está probando el radar del dragón. Lee cada trozo de código **sin
+ejecutarlo** y escribe qué valor queda al final.
+
+Guarda tus respuestas en `respuesta_1`, `respuesta_2`, `respuesta_3` y
+`respuesta_4`. Si la respuesta es un texto, escríbela entre comillas.
+'''
+
+plantilla = '''
+# === TU CÓDIGO ===
+respuesta_1 = ...
+respuesta_2 = ...
+respuesta_3 = ...
+respuesta_4 = ...
+'''
+
+pistas = [
+    "Sigue el código línea por línea, anotando en un papel cuánto vale cada variable.",
+    "Al copiar una variable en otra se copia el valor de ese momento. Cambiar después la primera no cambia la copia.",
+    "print() con varias cosas separadas por comas las muestra en una sola línea, con un espacio entre ellas.",
+]
+
+[[preguntas]]
+texto = "¿Cuánto vale `esferas` al final?"
+codigo = '''
+esferas = 3
+esferas = esferas + 2
+'''
+mirar = "esferas"
+pista = "La segunda línea usa el valor anterior para calcular el nuevo."
+
+[[preguntas]]
+texto = "¿Cuánto vale `copia` al final?"
+codigo = '''
+poder = 100
+copia = poder
+poder = 500
+'''
+mirar = "copia"
+pista = "¿Cuánto valía `poder` en el momento de hacer la copia?"
+
+[[preguntas]]
+texto = "¿Cuánto vale `faltan` al final?"
+codigo = '''
+encontradas = 7
+faltan = 7 - encontradas
+encontradas = 2
+'''
+mirar = "faltan"
+pista = "`faltan` se calculó una sola vez, antes del último cambio."
+
+[[preguntas]]
+texto = "¿Qué se muestra en pantalla? (escríbelo como texto)"
+codigo = '''
+esferas = 4
+print("Esferas:", esferas + 3)
+'''
+mirar = "salida"
+pista = "Primero se hace la suma y después se muestra, con un espacio tras los dos puntos."

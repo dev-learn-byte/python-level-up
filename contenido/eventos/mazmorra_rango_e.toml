@@ -1,0 +1,76 @@
+id = "mazmorra_rango_e"
+tipo = "mazmorra"
+titulo = "La puerta de rango E"
+anime = "Solo Leveling"
+formato = "escribir"
+dispositivo = "pc"
+xp = 40
+puntos = 50
+requiere_nivel = 3
+
+enunciado = '''
+**Mazmorra opcional. Se abre al aprobar el Nivel 3.**
+
+Ha aparecido una puerta de rango E. Antes de dejar entrar a un cazador, la
+Asociación necesita su ventana de estado, y el Sistema solo te entrega los
+datos en bruto. Esta mazmorra mezcla todo lo de la saga.
+
+Calcula y guarda:
+
+1. `cazador`: el nombre sin espacios a los lados y con cada palabra
+   empezando en mayúscula.
+2. `poder_total`: la fuerza multiplicada por 2, más la agilidad.
+3. `mana`: el maná convertido a número decimal (llega como texto).
+4. `es_rango_s`: verdadero solo si el poder total es mayor que 150 **y** el
+   nivel es mayor o igual que 50.
+5. `ventana`: un texto con este formato exacto, con el maná a un decimal:
+
+```
+[Sung Jinwoo] Nv.17 | Poder 133 | Maná 120.5
+```
+
+Fallar aquí no cuesta vidas. La recompensa se entrega una sola vez.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+nombre = "  sung jinwoo "
+nivel = 17
+fuerza = 48
+agilidad = 37
+mana_texto = "120.5"
+
+# === TU CÓDIGO ===
+cazador = ...
+poder_total = ...
+mana = ...
+es_rango_s = ...
+ventana = ...
+'''
+
+pistas = [
+    "Resuelve las variables en orden: las últimas usan las primeras.",
+    "El nombre necesita dos métodos encadenados. El maná necesita una conversión. es_rango_s une dos comparaciones.",
+    "La ventana es una f-string que usa cazador, nivel, poder_total y mana con el formato :.1f.",
+]
+
+[[casos]]
+nombre = "Sung Jinwoo"
+pista = "Revisa los corchetes, las barras y los espacios de la ventana."
+[casos.variables]
+cazador = "Sung Jinwoo"
+poder_total = 133
+mana = 120.5
+es_rango_s = false
+ventana = "[Sung Jinwoo] Nv.17 | Poder 133 | Maná 120.5"
+
+[[casos]]
+nombre = "Una cazadora de rango S"
+datos = { nombre = "cha HAE-in  ", nivel = 80, fuerza = 90, agilidad = 95, mana_texto = "300" }
+pista = "Con estos datos el poder supera 150 y el nivel supera 50."
+[casos.variables]
+cazador = "Cha Hae-In"
+poder_total = 275
+mana = 300.0
+es_rango_s = true
+ventana = "[Cha Hae-In] Nv.80 | Poder 275 | Maná 300.0"

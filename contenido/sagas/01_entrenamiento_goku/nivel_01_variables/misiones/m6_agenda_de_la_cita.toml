@@ -1,0 +1,59 @@
+id = "n1_agenda_de_la_cita"
+titulo = "La agenda de la cita"
+anime = "Rompiendo el hielo"
+formato = "escribir"
+dispositivo = "celular"
+xp = 15
+puntos = 15
+
+enunciado = '''
+**Misión especial de la oficina.**
+
+Himuro quiere invitar a Fuyutsuki a salir, pero cuando se pone nervioso lo
+congela todo. Para no olvidar nada, apunta el plan en su agenda.
+
+Los datos del plan ya están guardados. Te toca:
+
+1. Crear la variable `confirmada` con el valor verdadero.
+2. Mostrar el plan en tres líneas, **usando las variables**, así:
+
+```
+Lugar: acuario
+Hora: 18
+Presupuesto: 45.5
+```
+
+El plan puede cambiar, así que no escribas los valores a mano dentro de
+`print()`.
+'''
+
+plantilla = '''
+# === DATOS (no los cambies) ===
+lugar = "acuario"
+hora = 18
+presupuesto = 45.5
+
+# === TU CÓDIGO ===
+confirmada = ...
+'''
+
+pistas = [
+    "print() puede mostrar un texto y una variable a la vez si los separas con una coma.",
+    "La primera línea se consigue con print(\"Lugar:\", lugar). Fíjate en que los dos puntos van dentro de las comillas.",
+    "Necesitas tres print(), uno por línea, y la variable confirmada con el valor True.",
+]
+
+[[casos]]
+nombre = "El plan del acuario"
+pista = "Cada línea es un print() con un texto, una coma y una variable."
+salida = ["Lugar: acuario", "Hora: 18", "Presupuesto: 45.5"]
+[casos.variables]
+confirmada = true
+
+[[casos]]
+nombre = "Cambio de planes"
+datos = { lugar = "cafetería", hora = 20, presupuesto = 30.0 }
+pista = "Si escribiste los valores a mano, no cambian cuando cambia el plan."
+salida = ["Lugar: cafetería", "Hora: 20", "Presupuesto: 30.0"]
+[casos.variables]
+confirmada = true
