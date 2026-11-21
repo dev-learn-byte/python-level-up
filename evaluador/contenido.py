@@ -27,13 +27,23 @@ def practicar_mision(mision: dict, codigo: str) -> Informe:
     return evaluar_codigo(codigo, mision["casos"], requiere=mision.get("requiere", ()))
 
 
+class EntregaOficialNoDisponible(Exception):
+    """Falta el contenido privado: no se puede juzgar una entrega oficial."""
+
+
 def entregar_mision(mision: dict, codigo: str, privado: dict | None) -> Informe:
     """Entrega final: práctica más los casos oficiales, que usan otros datos.
 
-    `privado` es la entrada de esta misión en `soluciones.toml`.
+    `privado` es la entrada de esta misión en `soluciones.toml`. Sin ella la
+    entrega se rechaza: una entrega oficial nunca se juzga solo con la práctica.
     """
+    if not privado or "solucion" not in privado:
+        raise EntregaOficialNoDisponible(mision["id"])
+    con_datos = "# === DATOS" in mision["plantilla"]
+    if con_datos and not privado.get("casos"):
+        raise EntregaOficialNoDisponible(mision["id"])
     informe = practicar_mision(mision, codigo)
-    if mision["formato"] == "predecir" or not privado or not privado.get("casos"):
+    if mision["formato"] == "predecir" or not privado.get("casos"):
         return informe
     oficial = evaluar_codigo(
         codigo, privado["casos"], referencia=privado["solucion"],
@@ -48,6 +58,8 @@ def practicar_jefe(jefe: dict, codigo: str) -> Informe:
     return evaluar_codigo(codigo, jefe["practica"])
 
 
-def enfrentar_jefe(jefe: dict, codigo: str, privado: dict) -> Informe:
+def enfrentar_jefe(jefe: dict, codigo: str, privado: dict | None) -> Informe:
     """Entrega oficial del jefe: un resultado por requisito."""
+    if not privado or not privado.get("casos") or "solucion" not in privado:
+        raise EntregaOficialNoDisponible(jefe["id"])
     return evaluar_jefe(codigo, privado["casos"], jefe["requisitos"], privado["solucion"])
