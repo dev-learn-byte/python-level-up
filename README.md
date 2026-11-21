@@ -1,30 +1,31 @@
-# python-level-up
+# Python Level Up
 
-## Sistema de Leveling: Python de Rango E a Monarca
+Aprender Python de cero a avanzado como una aventura RPG, inspirada
+principalmente en Dragon Ball y con misiones especiales de otros animes.
+Aplicación web responsive para estudiar desde la computadora o el celular.
 
-Repaso de Python desde cero hasta avanzado, al estilo *Solo Leveling*:
-cumples misiones, ganas XP y subes de rango. Cada rango usa un anime distinto.
+## Estado
 
-## Cómo se juega
+| Etapa | Contenido | Estado |
+|---|---|---|
+| 0. Preparación | Rama, respaldo y estructura de carpetas | Hecha |
+| 1. Núcleo | Reglas: vidas, XP, puntos, saltos y penalizaciones | Pendiente |
+| 2. Saga 1 | Entrenamiento de Goku: 3 niveles y jefe final | Pendiente |
+| 3. Servidor | API, base de datos y acceso | Pendiente |
+| 4. Web | Interfaz para PC y celular | Pendiente |
+| 5. Publicación | Alojamiento y prueba desde el celular | Pendiente |
 
-```bash
-python rango_E_novato/ejemplos.py   # 1. mira y prueba los ejemplos
-# 2. lee rango_E_novato/leccion.md
-# 3. completa rango_E_novato/misiones.py
-python sistema.py                   # 4. el Sistema revisa y te da XP
-```
+## Carpetas
 
-Cuando llegues a 100 XP en un rango, pide el siguiente y envía tus soluciones
-para que te las revisen.
+| Carpeta | Para qué sirve |
+|---|---|
+| `nucleo/` | Motor de reglas en Python puro |
+| `contenido/` | Teoría, enunciados, plantillas y pistas |
+| `servidor/` | API con FastAPI |
+| `web/` | Interfaz en JavaScript |
+| `pruebas/` | Pruebas automáticas (`python -m pytest`) |
+| `docs/` | Documentación |
+| `respaldo_original/` | Copia del sistema anterior, sin cambios |
 
-## Rangos
-
-| Rango | XP | Temas | Anime | Estado |
-|---|---|---|---|---|
-| E - Novato | 0 | Variables, tipos, `print`, `input`, operadores | Dragon Ball | Disponible |
-| D - Guerrero Z | 100 | `if/else`, bucles `for` y `while` | Dragon Ball Z | Bloqueado |
-| C - Estudiante de la U.A. | 200 | Listas, tuplas, diccionarios, conjuntos | My Hero Academia | Bloqueado |
-| B - Aventurero | 300 | Funciones, módulos, manejo de errores | Konosuba | Bloqueado |
-| A - Héroe profesional | 400 | Clases, herencia, polimorfismo | My Hero Academia | Bloqueado |
-| S - Super Saiyajin | 500 | Archivos, JSON, comprensiones, generadores, decoradores | Dragon Ball Super | Bloqueado |
-| Monarca - Ultra Instinto | 600 | Testing, tipado, `async`, APIs, proyecto final | Torneo del Poder | Bloqueado |
+`sistema.py` y `rango_E_novato/` son el sistema anterior: siguen en su sitio
+hasta que las etapas 1 y 2 los reemplacen.

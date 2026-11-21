@@ -1,0 +1,8 @@
+[project]
+name = "python-level-up"
+version = "0.0.0"
+description = "Aprender Python de cero a avanzado como una aventura RPG"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["pruebas"]
