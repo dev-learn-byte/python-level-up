@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "contenido_privado": true,
+    "**/__pycache__": true
+  },
+  "search.exclude": {
+    "contenido_privado": true,
+    "mis_soluciones/intentos": true
+  },
+  "files.encoding": "utf8",
+  "files.eol": "\n"
+}

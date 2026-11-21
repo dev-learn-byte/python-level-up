@@ -24,5 +24,5 @@ def test_el_sistema_anterior_fue_retirado(ruta):
 
 
 def test_contenido_privado_ignorado_por_git():
-    ignorados = (RAIZ / ".gitignore").read_text().splitlines()
+    ignorados = (RAIZ / ".gitignore").read_text(encoding="utf-8").splitlines()
     assert "contenido_privado/" in ignorados

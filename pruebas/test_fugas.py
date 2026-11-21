@@ -53,9 +53,11 @@ def test_el_contenido_publico_no_incluye_soluciones_ni_retos_de_evaluacion():
     assert culpables == []
 
 
-@pytest.mark.parametrize("ruta", ["contenido_privado/", "contenido_privado", ".env", "progreso.json"])
+@pytest.mark.parametrize("ruta", [
+    "contenido_privado/", "contenido_privado", ".env", "progreso.json", "progreso.json.*", "mis_soluciones/",
+])
 def test_git_ignora_lo_privado(ruta):
-    assert ruta in (RAIZ / ".gitignore").read_text().splitlines()
+    assert ruta in (RAIZ / ".gitignore").read_text(encoding="utf-8").splitlines()
 
 
 def test_la_carpeta_privada_no_esta_registrada_en_git():

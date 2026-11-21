@@ -6,6 +6,8 @@ __pycache__/
 contenido_privado/
 contenido_privado
 progreso.json
+progreso.json.*
+mis_soluciones/
 .env
 *.db
 *.sqlite3
