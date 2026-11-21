@@ -284,3 +284,13 @@ def test_abandonar_el_examen_equivale_a_fracasar(cat):
     estado, res = resolver_salto(estado, cat, 0)
     assert estado.penalizacion.meta == 400         # el doble de 200
     assert res.ocurrio("salto_fracasado")
+
+
+def test_dos_saltos_distintos_pagan_cada_uno_su_recompensa(cat):
+    estado, _ = iniciar_salto(en_nivel_5(cat, 5000), cat, 7)
+    estado, primero = resolver_salto(estado, cat, 5)
+    estado = aprobar(estado, cat, 6)                 # ya no quedan pendientes detrás
+    estado, _ = iniciar_salto(estado, cat, 9)
+    estado, segundo = resolver_salto(estado, cat, 5)
+    assert (primero.xp, segundo.xp) == (100, 100)
+    assert {"salto:5-7", "salto:7-9"} <= estado.recompensas

@@ -8,6 +8,7 @@ reglas; el servidor la usa como autoridad. Las reglas están explicadas en
 |---|---|
 | `config.py` | Todos los números del juego |
 | `catalogo.py` | Niveles, misiones, jefes y eventos que existen |
+| `cargador.py` | Construye el catálogo leyendo las carpetas de `contenido/` |
 | `estado.py` | El progreso del jugador y su guardado en JSON |
 | `progresion.py` | Entregas, evaluaciones y jefes |
 | `economia.py` | XP, puntos, recompensas únicas y tienda |

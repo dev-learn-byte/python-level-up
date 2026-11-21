@@ -4,7 +4,7 @@ El examen tiene un único intento y no usa vidas: se supera con 80 %.
 Si se fracasa, se pierden los puntos invertidos y los saltos quedan
 bloqueados hasta ganar el doble en puntos nuevos.
 """
-from .economia import dar_logro, dar_xp, gastar
+from .economia import dar_logro, gastar, recompensar
 from .errores import AccionInvalida
 from .estado import EstadoNivel, Penalizacion, ProgresoNivel, SaltoEnCurso
 from .progresion import aprueba
@@ -93,6 +93,10 @@ def resolver_salto(estado, catalogo, res, aciertos: int):
     estado.niveles[salto.destino] = ProgresoNivel(EstadoNivel.ACTUAL, vidas)
     estado.nivel_actual = salto.destino
     estado.historial_saltos.append({**registro, "superado": True, "pendientes": saltados})
-    dar_xp(estado, catalogo, res, catalogo.config.xp_salto_superado)
+    # Clave única por salto: aunque el resultado llegue dos veces, paga una.
+    recompensar(
+        estado, catalogo, res, f"salto:{salto.origen}-{salto.destino}",
+        catalogo.config.xp_salto_superado, 0,
+    )
     dar_logro(estado, res, "salto_superado")
     res.sucesos.append("salto_superado")
