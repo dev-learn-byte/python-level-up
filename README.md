@@ -10,7 +10,7 @@ Aplicación web responsive para estudiar desde la computadora o el celular.
 |---|---|---|
 | 0. Preparación | Rama y estructura de carpetas | Hecha |
 | 1. Núcleo | Reglas: vidas, XP, puntos, saltos y penalizaciones | Hecha |
-| 2. Saga 1 | Entrenamiento de Goku: 3 niveles y jefe final | Pendiente |
+| 2. Saga 1 | Entrenamiento de Goku: 3 niveles, jefe final y mazmorra | Hecha |
 | 3. Servidor | API, base de datos y acceso | Pendiente |
 | 4. Web | Interfaz para PC y celular | Pendiente |
 | 5. Publicación | Alojamiento y prueba desde el celular | Pendiente |
@@ -20,8 +20,12 @@ Aplicación web responsive para estudiar desde la computadora o el celular.
 | Carpeta | Para qué sirve |
 |---|---|
 | `nucleo/` | Motor de reglas en Python puro |
-| `contenido/` | Teoría, enunciados, plantillas y pistas |
+| `evaluador/` | Ejecuta los ejercicios, comprueba el resultado y explica los errores |
+| `contenido/` | Teoría, ejemplos, misiones y pistas |
 | `servidor/` | API con FastAPI |
 | `web/` | Interfaz en JavaScript |
 | `pruebas/` | Pruebas automáticas (`python -m pytest`) |
 | `docs/` | Documentación |
+
+Las soluciones de referencia y las evaluaciones no están en este
+repositorio. Ver `docs/contenido_privado.md`.

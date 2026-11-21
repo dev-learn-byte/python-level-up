@@ -37,7 +37,8 @@ Estas son las reglas que aplica `nucleo/`. Todos los números están en
 
 | Acción | XP | Puntos |
 |---|---|---|
-| Misión | 10 | 10 |
+| Misión de Dragon Ball | 10 | 10 |
+| Misión especial de otro anime | 15 | 15 |
 | Evaluación aprobada | 50 | 30, más 5 por vida restante |
 | Jefe de saga | 150 | 100 |
 | Evento o mazmorra | 40 | 50 |
@@ -46,7 +47,7 @@ Estas son las reglas que aplica `nucleo/`. Todos los números están en
 | Salto superado | 100 | — |
 
 - Los XP nunca se pierden.
-- Cada misión, evaluación, jefe y evento paga solo la primera vez.
+- Cada misión, evaluación, jefe, evento y salto paga solo la primera vez.
 - Los puntos se gastan en saltos (100 por nivel), semillas (50) y pistas (10).
 
 ## Jefes
