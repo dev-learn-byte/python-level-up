@@ -43,6 +43,11 @@ def costo_salto(estado, catalogo, destino: int) -> int:
     return costo
 
 
+def retos_salto(config, distancia: int) -> int:
+    """Retos del examen: 2 por nivel saltado, con un mínimo de 5."""
+    return max(config.retos_salto_minimo, distancia * config.retos_salto_por_nivel)
+
+
 @accion
 def iniciar_salto(estado, catalogo, res, destino: int):
     """Empieza el examen de salto. Los puntos se descuentan en este momento."""
@@ -52,7 +57,7 @@ def iniciar_salto(estado, catalogo, res, destino: int):
     distancia = destino - estado.nivel_actual
     estado.salto = SaltoEnCurso(
         origen=estado.nivel_actual, destino=destino, costo=costo,
-        retos=distancia * catalogo.config.retos_salto_por_nivel,
+        retos=retos_salto(catalogo.config, distancia),
     )
     res.sucesos.append("salto_iniciado")
 

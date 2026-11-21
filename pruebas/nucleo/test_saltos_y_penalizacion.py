@@ -58,6 +58,25 @@ def test_saltos_que_no_se_permiten(cat, puntos, destino, codigo):
     assert estado.puntos == puntos                # no se cobró nada
 
 
+@pytest.mark.parametrize("destino, retos", [(6, 5), (7, 5), (8, 6), (9, 8), (10, 10)])
+def test_el_examen_tiene_minimo_5_retos_y_crece_con_la_distancia(cat, destino, retos):
+    estado = llegar_a(cat, 5, aprobado=True)
+    estado.puntos = 5000
+    estado.niveles.pop(6)                     # el 6 bloqueado, para poder saltar 1 nivel
+    estado, _ = iniciar_salto(estado, cat, destino)
+    assert estado.salto.retos == retos
+
+
+@pytest.mark.parametrize("aciertos, superado", [(4, True), (3, False)])
+def test_salto_corto_exige_4_de_5(cat, aciertos, superado):
+    estado = llegar_a(cat, 5, aprobado=True)
+    estado.puntos = 5000
+    estado.niveles.pop(6)
+    estado, _ = iniciar_salto(estado, cat, 6)
+    estado, res = resolver_salto(estado, cat, aciertos)
+    assert res.ocurrio("salto_superado") is superado
+
+
 def test_no_se_pueden_tener_dos_examenes_de_salto_a_la_vez(cat):
     estado, _ = iniciar_salto(en_nivel_5(cat, 2000), cat, 8)
     with pytest.raises(AccionInvalida) as error:

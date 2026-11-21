@@ -14,6 +14,7 @@ class Config:
     costo_salto_por_nivel: int = 100
     salto_maximo: int = 5
     retos_salto_por_nivel: int = 2
+    retos_salto_minimo: int = 5
     multiplicador_penalizacion: int = 2
     xp_salto_superado: int = 100
     # Tienda

@@ -166,3 +166,17 @@ def test_evento_inexistente(nuevo, cat):
     with pytest.raises(AccionInvalida) as error:
         completar_evento(nuevo, cat, "no_existe", True)
     assert error.value.codigo == "evento_inexistente"
+
+
+def test_al_reiniciar_el_nivel_el_repaso_vuelve_a_estar_disponible_una_vez(nuevo, cat):
+    estado, _ = entregar_mision(nuevo, cat, 1, "n1m1", False)
+    estado, _ = completar_repaso(estado, cat, 1, True)
+    for _ in range(5):
+        estado, _ = entregar_mision(estado, cat, 1, "n1m1", False)
+    assert estado.niveles[1].intentos == 2
+    estado, _ = entregar_mision(estado, cat, 1, "n1m1", False)
+    estado, _ = completar_repaso(estado, cat, 1, True)
+    assert estado.niveles[1].vidas == 5
+    estado, _ = entregar_mision(estado, cat, 1, "n1m1", False)
+    with pytest.raises(AccionInvalida):
+        completar_repaso(estado, cat, 1, True)

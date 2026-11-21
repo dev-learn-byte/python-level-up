@@ -203,3 +203,13 @@ def test_partidas_al_azar_respetan_las_reglas_basicas(cat, semilla):
         estado = nuevo
     assert aplicadas > 100
     assert Estado.desde_dict(json.loads(json.dumps(estado.a_dict()))) == estado
+
+
+def test_un_salto_aprobado_enviado_dos_veces_da_100_xp_una_sola_vez(cat):
+    estado = llegar_a(cat, 5, aprobado=True)
+    estado.puntos = 850
+    estado, _ = aplicar(estado, cat, {"tipo": "iniciar_salto", "id": "s1", "destino": 10})
+    xp = estado.xp
+    estado, _ = aplicar(estado, cat, {"tipo": "resolver_salto", "id": "s2", "aciertos": 10})
+    estado, res = aplicar(estado, cat, {"tipo": "resolver_salto", "id": "s2", "aciertos": 10})
+    assert res.duplicada and estado.xp == xp + 100

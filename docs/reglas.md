@@ -63,8 +63,8 @@ Estas son las reglas que aplica `nucleo/`. Todos los números están en
   destino bloqueado, como máximo 5 niveles y puntos suficientes.
 - Los puntos se descuentan al empezar el examen. Mientras dura, no se
   admite ninguna otra acción.
-- El examen tiene 2 retos por nivel de distancia, un único intento y se
-  supera con 80 %. No usa vidas.
+- El examen tiene 2 retos por nivel de distancia, con un mínimo de 5; un
+  único intento y se supera con 80 %. No usa vidas.
 - Si se supera: el destino pasa a ser el nivel actual y los niveles
   intermedios quedan pendientes (también el actual, si no estaba aprobado).
 - Si se fracasa: se pierden los puntos, no cambia el nivel y se activa la
