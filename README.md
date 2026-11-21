@@ -9,7 +9,7 @@ Aplicación web responsive para estudiar desde la computadora o el celular.
 | Etapa | Contenido | Estado |
 |---|---|---|
 | 0. Preparación | Rama, respaldo y estructura de carpetas | Hecha |
-| 1. Núcleo | Reglas: vidas, XP, puntos, saltos y penalizaciones | Pendiente |
+| 1. Núcleo | Reglas: vidas, XP, puntos, saltos y penalizaciones | Hecha |
 | 2. Saga 1 | Entrenamiento de Goku: 3 niveles y jefe final | Pendiente |
 | 3. Servidor | API, base de datos y acceso | Pendiente |
 | 4. Web | Interfaz para PC y celular | Pendiente |
